@@ -1,0 +1,16 @@
+# Runtime
+numpy>=1.24
+onnxruntime>=1.16          # inference and post-training quantisation
+opencv-python-headless>=4.8  # image decode, resize and the overlay drawings
+onnx>=1.14                 # graph inspection for the decode-tail exclusion
+
+# Figures
+matplotlib>=3.7
+
+# Test-only. pycocotools is the reference the from-scratch metric is checked
+# against; it is never imported by the library itself.
+pytest>=7.4
+pycocotools>=2.0.7
+
+# Only needed by tools/fetch_assets.py to export yolov8n.pt to ONNX.
+# ultralytics>=8.0

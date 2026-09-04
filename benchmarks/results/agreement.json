@@ -1,0 +1,93 @@
+{
+  "n_images": 4872,
+  "n_detections": 367010,
+  "largest_absolute_difference": 0.0,
+  "detbench_seconds": 32.5265212059021,
+  "pycocotools_seconds": 49.46247625350952,
+  "rows": [
+    {
+      "metric": "mAP",
+      "label": "AP @ 0.50:0.95, all, maxDets=100",
+      "detbench": 0.36629246804789467,
+      "pycocotools": 0.36629246804789467,
+      "abs_diff": 0.0
+    },
+    {
+      "metric": "mAP50",
+      "label": "AP @ 0.50, all, maxDets=100",
+      "detbench": 0.5147839065182805,
+      "pycocotools": 0.5147839065182805,
+      "abs_diff": 0.0
+    },
+    {
+      "metric": "mAP75",
+      "label": "AP @ 0.75, all, maxDets=100",
+      "detbench": 0.39802304711495085,
+      "pycocotools": 0.39802304711495085,
+      "abs_diff": 0.0
+    },
+    {
+      "metric": "mAP_small",
+      "label": "AP @ 0.50:0.95, small, maxDets=100",
+      "detbench": 0.17395412917187233,
+      "pycocotools": 0.17395412917187233,
+      "abs_diff": 0.0
+    },
+    {
+      "metric": "mAP_medium",
+      "label": "AP @ 0.50:0.95, medium, maxDets=100",
+      "detbench": 0.40453262027710674,
+      "pycocotools": 0.40453262027710674,
+      "abs_diff": 0.0
+    },
+    {
+      "metric": "mAP_large",
+      "label": "AP @ 0.50:0.95, large, maxDets=100",
+      "detbench": 0.5200951070209873,
+      "pycocotools": 0.5200951070209873,
+      "abs_diff": 0.0
+    },
+    {
+      "metric": "AR_1",
+      "label": "AR @ 0.50:0.95, all, maxDets=1",
+      "detbench": 0.3036194989137078,
+      "pycocotools": 0.3036194989137078,
+      "abs_diff": 0.0
+    },
+    {
+      "metric": "AR_10",
+      "label": "AR @ 0.50:0.95, all, maxDets=10",
+      "detbench": 0.49308983705964565,
+      "pycocotools": 0.49308983705964565,
+      "abs_diff": 0.0
+    },
+    {
+      "metric": "AR_100",
+      "label": "AR @ 0.50:0.95, all, maxDets=100",
+      "detbench": 0.5312977828770742,
+      "pycocotools": 0.5312977828770742,
+      "abs_diff": 0.0
+    },
+    {
+      "metric": "AR_small",
+      "label": "AR @ 0.50:0.95, small, maxDets=100",
+      "detbench": 0.28923088697683036,
+      "pycocotools": 0.28923088697683036,
+      "abs_diff": 0.0
+    },
+    {
+      "metric": "AR_medium",
+      "label": "AR @ 0.50:0.95, medium, maxDets=100",
+      "detbench": 0.5927596540285214,
+      "pycocotools": 0.5927596540285214,
+      "abs_diff": 0.0
+    },
+    {
+      "metric": "AR_large",
+      "label": "AR @ 0.50:0.95, large, maxDets=100",
+      "detbench": 0.7067093254946479,
+      "pycocotools": 0.7067093254946479,
+      "abs_diff": 0.0
+    }
+  ]
+}

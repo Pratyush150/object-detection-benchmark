@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "detbench"
+version = "0.1.0"
+description = "COCO mAP from scratch, post-training quantisation, and the accuracy-versus-latency table that follows"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Pratyush Vatsa" }]
+keywords = ["object-detection", "coco", "map", "quantisation", "onnx", "benchmark"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Scientific/Engineering :: Image Recognition",
+]
+dependencies = [
+  "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+runtime = ["onnxruntime>=1.16", "opencv-python-headless>=4.8", "onnx>=1.14"]
+figures = ["matplotlib>=3.7"]
+test = ["pytest>=7.4", "pycocotools>=2.0.7"]
+
+[project.scripts]
+detbench = "detbench.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,56 @@
+{
+  "note": "Nothing here is committed to the repository. tools/fetch_assets.py downloads these, checks the SHA-256, and exports the ONNX model.",
+  "downloads": [
+    {
+      "name": "val2017-images",
+      "url": "http://images.cocodataset.org/zips/val2017.zip",
+      "filename": "val2017.zip",
+      "size_bytes": 815585330,
+      "sha256": "4f7e2ccb2866ec5041993c9cf2a952bbed69647b115d0f74da7ce8f4bef82f05",
+      "extract_to": ".",
+      "produces": "val2017/"
+    },
+    {
+      "name": "val2017-annotations",
+      "url": "http://images.cocodataset.org/annotations/annotations_trainval2017.zip",
+      "filename": "annotations_trainval2017.zip",
+      "size_bytes": 252907541,
+      "sha256": "113a836d90195ee1f884e704da6304dfaaecff1f023f49b6ca93c4aaae470268",
+      "extract_to": ".",
+      "extract_members": ["annotations/instances_val2017.json"],
+      "produces": "annotations/instances_val2017.json"
+    },
+    {
+      "name": "yolov8n-weights",
+      "url": "https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt",
+      "filename": "yolov8n.pt",
+      "size_bytes": 6549796,
+      "sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+      "license": "AGPL-3.0 (Ultralytics)",
+      "produces": "yolov8n.pt"
+    }
+  ],
+  "export": {
+    "source": "yolov8n.pt",
+    "output": "yolov8n.onnx",
+    "format": "onnx",
+    "imgsz": 640,
+    "opset": 13,
+    "dynamic": false,
+    "simplify": false,
+    "nms": false,
+    "exported_with": "ultralytics 8.4.138, torch 2.13.0+cpu, onnx 1.22.0",
+    "sha256_observed": "04d745d82b5bff6dbc4d170e1ccfd8323168f632124fab539b59e759fe9c45f3",
+    "sha256_note": "The ONNX hash depends on the exporter version and is recorded for reference only. The checkpoint hash above is the one that is enforced."
+  },
+  "evaluation": {
+    "calibration_images": 128,
+    "split_seed": 0,
+    "input_size": 640,
+    "conf_threshold": 0.001,
+    "nms_iou_threshold": 0.7,
+    "nms_max_dets": 300,
+    "coco_max_dets": 100,
+    "multi_label": false
+  }
+}

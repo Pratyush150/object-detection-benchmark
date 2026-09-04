@@ -1,0 +1,32 @@
+# Datasets, weights and derived models are never committed.
+assets/
+*.onnx
+*.pt
+*.zip
+val2017/
+annotations/
+benchmarks/cache/
+benchmarks/results/*.json.gz
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+
+# Tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Editors and OS
+.vscode/
+.idea/
+*.swp
+.DS_Store

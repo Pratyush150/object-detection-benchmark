@@ -1,0 +1,63 @@
+{
+  "note": "The quantisation sweep. Every variant here is built, run and reported; a variant that fails to build or fails to load is reported as a failure rather than dropped.",
+  "variants": [
+    {
+      "name": "fp32",
+      "kind": "fp32",
+      "why": "Baseline. Everything else is measured against this."
+    },
+    {
+      "name": "int8-dynamic",
+      "kind": "dynamic",
+      "per_channel": true,
+      "why": "Weight-only INT8 with run-time activation ranges. No calibration data needed."
+    },
+    {
+      "name": "int8-static",
+      "kind": "static",
+      "calib": 128,
+      "per_channel": true,
+      "method": "minmax",
+      "exclude_tail": true,
+      "why": "The recommended recipe: calibrated INT8 with the decode tail left in float32."
+    },
+    {
+      "name": "int8-static-c16",
+      "kind": "static",
+      "calib": 16,
+      "per_channel": true,
+      "method": "minmax",
+      "exclude_tail": true,
+      "why": "Same recipe with an eighth of the calibration images, to show how much calibration set size matters."
+    },
+    {
+      "name": "int8-static-pertensor",
+      "kind": "static",
+      "calib": 128,
+      "per_channel": false,
+      "method": "minmax",
+      "exclude_tail": true,
+      "why": "One weight scale per tensor instead of per output channel."
+    },
+    {
+      "name": "int8-static-entropy",
+      "kind": "static",
+      "calib": 128,
+      "per_channel": true,
+      "method": "entropy",
+      "exclude_tail": true,
+      "why": "KL-divergence calibration instead of min/max.",
+      "enabled": false,
+      "not_measured_reason": "onnxruntime's entropy calibrator holds the collected activation tensors in memory and was killed by the OOM killer on the 3.7 GB machine these numbers were measured on, at both 128 and 16 calibration images. Set enabled to true to run it on a machine with more memory."
+    },
+    {
+      "name": "int8-static-notail",
+      "kind": "static",
+      "calib": 128,
+      "per_channel": true,
+      "method": "minmax",
+      "exclude_tail": false,
+      "why": "The naive recipe that quantises the whole graph including the decode tail. Included to show what it does."
+    }
+  ]
+}
