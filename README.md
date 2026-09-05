@@ -10,7 +10,19 @@ that falls out of running both over 4,872 real images.
 ![Model](https://img.shields.io/badge/model-YOLOv8n-111111)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-![Accuracy versus latency](benchmarks/output/accuracy-vs-latency.png)
+## Screenshots
+
+![Scatter of COCO mAP against end-to-end CPU latency for seven YOLOv8n variants](docs/screenshots/accuracy-vs-latency.png)
+Accuracy against latency for seven YOLOv8n variants, measured on 4,872 real COCO val2017 images on the same CPU. Marker area is the model file size.
+
+![YOLOv8n detections on a crowded COCO street photograph, all boxes correct](docs/screenshots/coco-detections-correct.jpg)
+COCO val2017 image 191845: 43 confident detections, all 43 matched to a labelled object.
+
+![YOLOv8n detections on a COCO truck-yard photograph, every confident box wrong](docs/screenshots/coco-detections-failure.jpg)
+The failure the average hides. COCO val2017 image 573943: 21 confident detections, none of them correct.
+
+![Horizontal bar chart of per-class AP for all 80 COCO classes](docs/screenshots/per-class-ap.png)
+Per-class AP across all 80 COCO classes, spanning 0.5 to 67.7 around a mean of 36.6 - the spread a single mAP number hides.
 
 Every number and every image in this README was produced by the code in this
 repository, on real COCO val2017 images with a real YOLOv8n ONNX model. Nothing
